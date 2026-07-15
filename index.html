@@ -27,13 +27,16 @@
           <span>CITY<br />BINGO</span>
         </button>
 
-        <button class="city-switcher" id="citySwitcher" type="button" aria-haspopup="dialog">
-          <span>
-            <small>FIELD SITE</small>
-            <strong id="currentCityLabel">MY CITY</strong>
-          </span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
-        </button>
+        <div class="header-actions">
+          <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to Russian">RU</button>
+          <button class="city-switcher" id="citySwitcher" type="button" aria-haspopup="dialog">
+            <span>
+              <small data-i18n="fieldSite">FIELD SITE</small>
+              <strong id="currentCityLabel">MY CITY</strong>
+            </span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+          </button>
+        </div>
       </header>
 
       <main id="mainContent">
@@ -41,10 +44,10 @@
           <div class="hero">
             <div class="hero-copy">
               <p class="eyebrow" id="todayLabel">TODAY'S FIELDWORK</p>
-              <h1 id="homeTitle">Read the city<br /><em>one square at a time.</em></h1>
-              <p>Observe closely, wander intentionally, and collect the stories hiding in plain sight.</p>
+              <h1 id="homeTitle" data-i18n-html="homeTitle">Read the city<br /><em>one square at a time.</em></h1>
+              <p data-i18n="homeIntro">Observe closely, wander intentionally, and collect the stories hiding in plain sight.</p>
               <button class="primary-button" id="resumeGame" type="button">
-                OPEN TODAY'S CARD
+                <span data-i18n="openCard">OPEN TODAY'S CARD</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </button>
             </div>
@@ -67,32 +70,32 @@
           <section class="stats-strip" aria-label="Fieldwork statistics">
             <article>
               <span id="completedCount">0</span>
-              <small>SQUARES<br />FOUND</small>
+              <small data-i18n-html="squaresFound">SQUARES<br />FOUND</small>
             </article>
             <article>
               <span id="pointsCount">0</span>
-              <small>RESEARCH<br />POINTS</small>
+              <small data-i18n-html="researchPoints">RESEARCH<br />POINTS</small>
             </article>
             <article>
               <span id="distanceCount">0.0</span>
-              <small>KM<br />WALKED</small>
+              <small data-i18n-html="kmWalked">KM<br />WALKED</small>
             </article>
           </section>
 
           <section class="home-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">ACTIVE SERIES</p>
-                <h2>Street Reader</h2>
+                <p class="eyebrow" data-i18n="activeSeries">ACTIVE SERIES</p>
+                <h2 data-i18n="streetReader">Street Reader</h2>
               </div>
-              <button class="text-button" type="button" data-screen-target="bingo">VIEW CARD</button>
+              <button class="text-button" type="button" data-screen-target="bingo" data-i18n="viewCard">VIEW CARD</button>
             </div>
 
             <button class="series-card" id="seriesCard" type="button" data-screen-target="bingo">
               <span class="series-number">01</span>
               <span class="series-copy">
-                <small>FOUNDATIONS · 16 TASKS</small>
-                <strong>Learn to notice what<br />makes a place feel alive.</strong>
+                <small data-i18n="foundationTasks">FOUNDATIONS · 16 TASKS</small>
+                <strong data-i18n-html="seriesDescription">Learn to notice what<br />makes a place feel alive.</strong>
                 <span class="mini-progress"><i id="miniProgress"></i></span>
                 <span id="seriesProgressLabel">0 of 16 observations logged</span>
               </span>
@@ -106,30 +109,30 @@
           </section>
 
           <section class="home-section prompt-section">
-            <p class="eyebrow">RESEARCH PROMPT</p>
-            <blockquote>“What does this street invite you to do — and who might it leave out?”</blockquote>
-            <button class="secondary-button" id="randomTaskButton" type="button">GIVE ME A RANDOM TASK</button>
+            <p class="eyebrow" data-i18n="researchPrompt">RESEARCH PROMPT</p>
+            <blockquote data-i18n="researchQuote">“What does this street invite you to do — and who might it leave out?”</blockquote>
+            <button class="secondary-button" id="randomTaskButton" type="button" data-i18n="randomTask">GIVE ME A RANDOM TASK</button>
           </section>
         </section>
 
         <section class="screen" id="screen-bingo" data-screen="bingo" aria-labelledby="bingoTitle" hidden>
           <div class="screen-intro bingo-intro">
             <div>
-              <p class="eyebrow">SERIES 01 · FOUNDATIONS</p>
-              <h1 id="bingoTitle">Street Reader</h1>
-              <p>Complete any row, column, or diagonal to make bingo. Every square is a tiny urban research method.</p>
+              <p class="eyebrow" data-i18n="seriesFoundations">SERIES 01 · FOUNDATIONS</p>
+              <h1 id="bingoTitle" data-i18n="streetReader">Street Reader</h1>
+              <p data-i18n="bingoIntro">Complete any row, column, or diagonal to make bingo. Every square is a tiny urban research method.</p>
             </div>
             <div class="card-stamp" aria-label="Current bingo count">
               <span id="bingoCount">0</span>
-              <small>BINGOS</small>
+              <small data-i18n="bingos">BINGOS</small>
             </div>
           </div>
 
           <div class="category-legend" aria-label="Task category legend">
-            <span><i class="dot architecture"></i>Architecture</span>
-            <span><i class="dot culture"></i>Culture</span>
-            <span><i class="dot ecology"></i>Ecology</span>
-            <span><i class="dot movement"></i>Movement</span>
+            <span><i class="dot architecture"></i><b data-i18n="architecture">Architecture</b></span>
+            <span><i class="dot culture"></i><b data-i18n="culture">Culture</b></span>
+            <span><i class="dot ecology"></i><b data-i18n="ecology">Ecology</b></span>
+            <span><i class="dot movement"></i><b data-i18n="movement">Movement</b></span>
           </div>
 
           <div class="bingo-board" id="bingoBoard" role="grid" aria-label="City Bingo challenge card"></div>
@@ -148,12 +151,12 @@
         <section class="screen" id="screen-map" data-screen="map" aria-labelledby="mapTitle" hidden>
           <div class="screen-intro map-intro">
             <div>
-              <p class="eyebrow">NEIGHBORHOOD FIELD MAP</p>
-              <h1 id="mapTitle">Choose a thread<br />through the city.</h1>
+              <p class="eyebrow" data-i18n="fieldMap">NEIGHBORHOOD FIELD MAP</p>
+              <h1 id="mapTitle" data-i18n-html="mapTitle">Choose a thread<br />through the city.</h1>
             </div>
             <button class="locate-button" id="locateButton" type="button">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="8" /><path d="M12 2V5M12 19v3M2 12h3M19 12h3" /></svg>
-              LOCATE
+              <span id="locateButtonLabel" data-i18n="locate">LOCATE</span>
             </button>
           </div>
 
@@ -184,9 +187,9 @@
               <g class="map-you" id="mapYou" transform="translate(75 275)" hidden>
                 <circle class="map-you-pulse" r="16" /><circle r="7" />
               </g>
-              <text class="map-label" x="214" y="112">COMMON PARK</text>
-              <text class="map-label" x="18" y="340">SOUTH QUAY</text>
-              <text class="map-label" x="285" y="203">OLD QUARTER</text>
+              <text class="map-label" id="mapLabelPark" x="214" y="112">COMMON PARK</text>
+              <text class="map-label" id="mapLabelQuay" x="18" y="340">SOUTH QUAY</text>
+              <text class="map-label" id="mapLabelQuarter" x="285" y="203">OLD QUARTER</text>
             </svg>
 
             <div class="map-detail" id="mapDetail" aria-live="polite">
@@ -200,28 +203,28 @@
 
           <div class="route-list" aria-label="Suggested neighborhood research routes">
             <button class="route-item is-active" type="button" data-route="market">
-              <span>01</span><strong>The Social Street</strong><small>1.2 km · People</small>
+              <span>01</span><strong data-i18n="routeMarketTitle">The Social Street</strong><small data-i18n="routeMarketMeta">1.2 km · People</small>
             </button>
             <button class="route-item" type="button" data-route="park">
-              <span>02</span><strong>Green Interruptions</strong><small>1.8 km · Ecology</small>
+              <span>02</span><strong data-i18n="routeParkTitle">Green Interruptions</strong><small data-i18n="routeParkMeta">1.8 km · Ecology</small>
             </button>
             <button class="route-item" type="button" data-route="bridge">
-              <span>03</span><strong>Edges & Crossings</strong><small>2.4 km · Movement</small>
+              <span>03</span><strong data-i18n="routeBridgeTitle">Edges & Crossings</strong><small data-i18n="routeBridgeMeta">2.4 km · Movement</small>
             </button>
             <button class="route-item" type="button" data-route="museum">
-              <span>04</span><strong>Memory Walk</strong><small>2.0 km · Culture</small>
+              <span>04</span><strong data-i18n="routeMuseumTitle">Memory Walk</strong><small data-i18n="routeMuseumMeta">2.0 km · Culture</small>
             </button>
           </div>
 
-          <p class="map-note"><strong>Field note:</strong> This is a prompt map, not turn-by-turn navigation. Stay aware of traffic, access rules, and your surroundings.</p>
+          <p class="map-note" data-i18n-html="mapNote"><strong>Field note:</strong> This is a prompt map, not turn-by-turn navigation. Stay aware of traffic, access rules, and your surroundings.</p>
         </section>
 
         <section class="screen" id="screen-passport" data-screen="passport" aria-labelledby="passportTitle" hidden>
           <div class="screen-intro passport-intro">
             <div>
-              <p class="eyebrow">YOUR URBAN ARCHIVE</p>
-              <h1 id="passportTitle">Field Passport</h1>
-              <p>A growing record of places noticed, questions asked, and patterns collected.</p>
+              <p class="eyebrow" data-i18n="urbanArchive">YOUR URBAN ARCHIVE</p>
+              <h1 id="passportTitle" data-i18n="fieldPassport">Field Passport</h1>
+              <p data-i18n="passportIntro">A growing record of places noticed, questions asked, and patterns collected.</p>
             </div>
             <div class="passport-seal" aria-hidden="true">CB<br /><span>2026</span></div>
           </div>
@@ -230,7 +233,7 @@
             <div class="passport-top">
               <span class="passport-monogram">UR</span>
               <div>
-                <small>URBAN RESEARCHER</small>
+                <small data-i18n="urbanResearcher">URBAN RESEARCHER</small>
                 <strong id="passportCity">MY CITY</strong>
                 <span id="passportRank">OBSERVER · LEVEL 01</span>
               </div>
@@ -242,8 +245,8 @@
           <section class="achievement-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">ACHIEVEMENTS</p>
-                <h2>Field badges</h2>
+                <p class="eyebrow" data-i18n="achievements">ACHIEVEMENTS</p>
+                <h2 data-i18n="fieldBadges">Field badges</h2>
               </div>
               <span id="achievementCount">0 / 6</span>
             </div>
@@ -253,8 +256,8 @@
           <section class="archive-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">COLLECTION</p>
-                <h2>Research notes</h2>
+                <p class="eyebrow" data-i18n="collection">COLLECTION</p>
+                <h2 data-i18n="researchNotes">Research notes</h2>
               </div>
             </div>
             <div class="notes-list" id="notesList"></div>
@@ -262,12 +265,12 @@
 
           <section class="data-section">
             <div>
-              <strong>Your observations stay on this device.</strong>
-              <p>Export a backup before clearing browser data or changing phones.</p>
+              <strong data-i18n="localOnly">Your observations stay on this device.</strong>
+              <p data-i18n="backupHint">Export a backup before clearing browser data or changing phones.</p>
             </div>
             <div class="data-actions">
-              <button class="secondary-button" id="exportButton" type="button">EXPORT</button>
-              <label class="secondary-button file-button" for="importInput">IMPORT</label>
+              <button class="secondary-button" id="exportButton" type="button" data-i18n="export">EXPORT</button>
+              <label class="secondary-button file-button" for="importInput" data-i18n="import">IMPORT</label>
               <input id="importInput" type="file" accept="application/json" hidden />
             </div>
           </section>
@@ -277,44 +280,44 @@
       <nav class="bottom-nav" aria-label="Main navigation">
         <button class="nav-button is-active" type="button" data-screen-target="home" aria-current="page">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
-          <span>HOME</span>
+          <span data-i18n="navHome">HOME</span>
         </button>
         <button class="nav-button" type="button" data-screen-target="bingo">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>
-          <span>CARD</span>
+          <span data-i18n="navCard">CARD</span>
         </button>
         <button class="nav-button" type="button" data-screen-target="map">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3Z" /><path d="M9 3v15M15 6v15" /></svg>
-          <span>MAP</span>
+          <span data-i18n="navMap">MAP</span>
         </button>
         <button class="nav-button" type="button" data-screen-target="passport">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2Z" /><path d="M9 3v18M12 8h4M12 12h4" /></svg>
-          <span>PASSPORT</span>
+          <span data-i18n="navPassport">PASSPORT</span>
         </button>
       </nav>
     </div>
 
     <div class="install-banner" id="installBanner" hidden>
       <div class="install-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-      <div><strong>Take City Bingo with you</strong><span>Install for fullscreen play and offline access.</span></div>
-      <button id="installBannerButton" type="button">INSTALL</button>
+      <div><strong data-i18n="installBannerTitle">Take City Bingo with you</strong><span data-i18n="installBannerText">Install for fullscreen play and offline access.</span></div>
+      <button id="installBannerButton" type="button" data-i18n="install">INSTALL</button>
       <button class="dismiss-install" id="dismissInstall" type="button" aria-label="Dismiss install prompt">×</button>
     </div>
 
     <dialog class="sheet-dialog" id="taskDialog">
-      <form method="dialog" class="sheet-handle-row"><button aria-label="Close task details">CLOSE</button></form>
+      <form method="dialog" class="sheet-handle-row"><button aria-label="Close task details" data-i18n="close">CLOSE</button></form>
       <div class="task-sheet" id="taskSheet"></div>
     </dialog>
 
     <dialog class="modal-dialog" id="cityDialog">
       <form method="dialog" class="modal-card" id="cityForm">
         <button class="modal-close" value="cancel" aria-label="Close">×</button>
-        <p class="eyebrow">FIELD SITE</p>
-        <h2>Where are you exploring?</h2>
-        <p>City Bingo works anywhere. Name your current city or neighborhood to personalize your field passport.</p>
-        <label for="cityInput">CITY OR NEIGHBORHOOD</label>
+        <p class="eyebrow" data-i18n="fieldSite">FIELD SITE</p>
+        <h2 data-i18n="whereExploring">Where are you exploring?</h2>
+        <p data-i18n="cityDialogText">City Bingo works anywhere. Name your current city or neighborhood to personalize your field passport.</p>
+        <label for="cityInput" data-i18n="cityLabel">CITY OR NEIGHBORHOOD</label>
         <input id="cityInput" name="city" maxlength="36" autocomplete="address-level2" placeholder="e.g. Lisbon" required />
-        <button class="primary-button" id="saveCityButton" value="default">SAVE FIELD SITE</button>
+        <button class="primary-button" id="saveCityButton" value="default" data-i18n="saveFieldSite">SAVE FIELD SITE</button>
       </form>
     </dialog>
 
@@ -322,14 +325,14 @@
       <form method="dialog" class="modal-card install-modal">
         <button class="modal-close" value="cancel" aria-label="Close">×</button>
         <div class="install-large-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <p class="eyebrow">INSTALL CITY BINGO</p>
+        <p class="eyebrow" data-i18n="installCityBingo">INSTALL CITY BINGO</p>
         <h2 id="installDialogTitle">Add to your Home Screen</h2>
         <ol id="installSteps">
           <li><span>1</span><p>Open this page in <strong>Safari</strong>.</p></li>
           <li><span>2</span><p>Tap the <strong>Share</strong> button in the toolbar.</p></li>
           <li><span>3</span><p>Choose <strong>Add to Home Screen</strong>, then tap Add.</p></li>
         </ol>
-        <button class="primary-button" value="default">GOT IT</button>
+        <button class="primary-button" value="default" data-i18n="gotIt">GOT IT</button>
       </form>
     </dialog>
 

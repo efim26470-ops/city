@@ -145,6 +145,26 @@ svg {
 .install-icon span:nth-child(4),
 .install-large-icon span:nth-child(4) { background: var(--paper-bright); }
 
+.header-actions {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.language-toggle {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 247, 0.42);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
 .city-switcher {
   display: flex;
   align-items: center;
@@ -637,6 +657,10 @@ h2 {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.category-legend b {
+  font: inherit;
 }
 
 .dot {
@@ -1527,7 +1551,8 @@ dialog::backdrop {
 
 @media (max-width: 410px) {
   .app-header { padding-right: 14px; padding-left: 14px; }
-  .city-switcher strong { max-width: 105px; }
+  .city-switcher strong { max-width: 95px; }
+  .language-toggle { flex-basis: 34px; width: 34px; }
   .hero { display: block; padding-top: 20px; }
   .hero-copy { position: relative; z-index: 1; max-width: calc(100% - 30px); }
   .hero-orbit { position: absolute; z-index: 0; top: 60px; right: -36px; opacity: 0.35; }

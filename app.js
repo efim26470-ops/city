@@ -9,6 +9,303 @@
     movement: "#4f7f8f"
   };
 
+  const TRANSLATIONS = {
+    en: {
+      appTitle: "City Bingo — Urban Fieldwork Game",
+      metaDescription: "City Bingo turns urban research into a playful fieldwork game.",
+      switchLanguage: "Switch to Russian",
+      goHome: "Go to home",
+      fieldSite: "FIELD SITE",
+      homeTitle: "Read the city<br /><em>one square at a time.</em>",
+      homeIntro: "Observe closely, wander intentionally, and collect the stories hiding in plain sight.",
+      openCard: "OPEN TODAY'S CARD",
+      currentLevel: "Current level progress",
+      fieldworkStats: "Fieldwork statistics",
+      squaresFound: "SQUARES<br />FOUND",
+      researchPoints: "RESEARCH<br />POINTS",
+      kmWalked: "KM<br />WALKED",
+      activeSeries: "ACTIVE SERIES",
+      streetReader: "Street Reader",
+      viewCard: "VIEW CARD",
+      foundationTasks: "FOUNDATIONS · 16 TASKS",
+      seriesDescription: "Learn to notice what<br />makes a place feel alive.",
+      researchPrompt: "RESEARCH PROMPT",
+      researchQuote: "“What does this street invite you to do — and who might it leave out?”",
+      randomTask: "GIVE ME A RANDOM TASK",
+      seriesFoundations: "SERIES 01 · FOUNDATIONS",
+      bingoIntro: "Complete any row, column, or diagonal to make bingo. Every square is a tiny urban research method.",
+      currentBingoCount: "Current bingo count",
+      bingos: "BINGOS",
+      taskCategoryLegend: "Task category legend",
+      architecture: "Architecture",
+      culture: "Culture",
+      ecology: "Ecology",
+      movement: "Movement",
+      bingoBoard: "City Bingo challenge card",
+      shareProgress: "Share progress",
+      fieldMap: "NEIGHBORHOOD FIELD MAP",
+      mapTitle: "Choose a thread<br />through the city.",
+      locate: "LOCATE",
+      locating: "LOCATING…",
+      located: "LOCATED",
+      mapSvgTitle: "Schematic neighborhood exploration map",
+      mapSvgDesc: "A playful diagram of streets, a river, parks, and suggested research stops.",
+      mapPark: "COMMON PARK",
+      mapQuay: "SOUTH QUAY",
+      mapQuarter: "OLD QUARTER",
+      routeList: "Suggested neighborhood research routes",
+      routeMarketTitle: "The Social Street",
+      routeMarketMeta: "1.2 km · People",
+      routeParkTitle: "Green Interruptions",
+      routeParkMeta: "1.8 km · Ecology",
+      routeBridgeTitle: "Edges & Crossings",
+      routeBridgeMeta: "2.4 km · Movement",
+      routeMuseumTitle: "Memory Walk",
+      routeMuseumMeta: "2.0 km · Culture",
+      mapNote: "<strong>Field note:</strong> This is a prompt map, not turn-by-turn navigation. Stay aware of traffic, access rules, and your surroundings.",
+      urbanArchive: "YOUR URBAN ARCHIVE",
+      fieldPassport: "Field Passport",
+      passportIntro: "A growing record of places noticed, questions asked, and patterns collected.",
+      urbanResearcher: "URBAN RESEARCHER",
+      achievements: "ACHIEVEMENTS",
+      fieldBadges: "Field badges",
+      collection: "COLLECTION",
+      researchNotes: "Research notes",
+      localOnly: "Your observations stay on this device.",
+      backupHint: "Export a backup before clearing browser data or changing phones.",
+      export: "EXPORT",
+      import: "IMPORT",
+      navHome: "HOME",
+      navCard: "CARD",
+      navMap: "MAP",
+      navPassport: "PASSPORT",
+      mainNavigation: "Main navigation",
+      installBannerTitle: "Take City Bingo with you",
+      installBannerText: "Install for fullscreen play and offline access.",
+      install: "INSTALL",
+      dismissInstall: "Dismiss install prompt",
+      close: "CLOSE",
+      closeTask: "Close task details",
+      closeModal: "Close",
+      whereExploring: "Where are you exploring?",
+      cityDialogText: "City Bingo works anywhere. Name your current city or neighborhood to personalize your field passport.",
+      cityLabel: "CITY OR NEIGHBORHOOD",
+      cityPlaceholder: "e.g. Lisbon",
+      saveFieldSite: "SAVE FIELD SITE",
+      installCityBingo: "INSTALL CITY BINGO",
+      addHomeScreen: "Add to your Home Screen",
+      gotIt: "GOT IT",
+      todayFieldwork: "TODAY'S FIELDWORK",
+      level: "LEVEL",
+      observer: "OBSERVER",
+      explorer: "EXPLORER",
+      researcher: "RESEARCHER",
+      observationsLogged: (count, total) => `${count} of ${total} observations logged`,
+      cardExplored: (percent) => `${percent}% of card explored`,
+      connectedSquares: "Complete any 4 connected squares",
+      completedLines: (count) => `${count} fieldwork ${count === 1 ? "line" : "lines"} completed`,
+      completed: "Completed",
+      notCompleted: "Not completed",
+      unlocked: "UNLOCKED",
+      locked: "Locked",
+      archiveWaiting: "Your archive is waiting.",
+      archiveWaitingText: "Complete a bingo square to add the first field note.",
+      photoPrefix: "Photo",
+      locationLogged: "Location observation logged",
+      logged: "LOGGED",
+      taskDetails: "Task details",
+      time: "TIME",
+      difficulty: "DIFFICULTY",
+      reward: "REWARD",
+      pointsShort: "pts",
+      difficultyEasy: "Easy",
+      difficultyMedium: "Medium",
+      difficultyHard: "Hard",
+      editObservation: "Edit your observation",
+      logObservation: "Log your observation",
+      fieldNote: "FIELD NOTE",
+      notePlaceholder: "What did you notice? What question did it raise?",
+      photoAttached: "PHOTO ATTACHED",
+      addPhoto: "ADD A PHOTO",
+      cameraLibrary: "Camera or library",
+      checkedIn: "CHECKED IN",
+      checkIn: "CHECK IN",
+      approximateSaved: "Approximate location saved",
+      optionalLocation: "Optional location evidence",
+      updateObservation: "UPDATE OBSERVATION",
+      completeFor: (points) => `COMPLETE FOR ${points} POINTS`,
+      removeCompleted: "REMOVE FROM COMPLETED",
+      locationUnavailable: "Location is not available on this device.",
+      checkinReady: "Check-in ready to save.",
+      permissionDenied: "Location permission was not granted.",
+      addEvidence: "Add a field note, photo, or check-in first.",
+      squareComplete: (points) => `Square complete · +${points} points`,
+      squareBingo: (count) => `Square complete · ${count} ${count === 1 ? "bingo" : "bingos"}!`,
+      observationUpdated: "Observation updated.",
+      squareRemoved: "Square returned to the card.",
+      shareText: (count, total, city, bingos) => `I explored ${count}/${total} City Bingo squares in ${city} and made ${bingos} ${bingos === 1 ? "bingo" : "bingos"}.`,
+      shareTitle: "My City Bingo fieldwork",
+      progressCopied: "Progress copied to the clipboard.",
+      sharingUnavailable: "Sharing is not available right now.",
+      mapLocated: "You are on the field map. Position is approximate.",
+      archiveExported: "Field archive exported.",
+      archiveImported: "Field archive imported.",
+      invalidArchive: "That file is not a City Bingo archive.",
+      citySet: (city) => `Field site set to ${city}.`,
+      myCity: "MY CITY",
+      installIosSteps: '<li><span>1</span><p>Open this page in <strong>Safari</strong>.</p></li><li><span>2</span><p>Tap the <strong>Share</strong> button in the toolbar.</p></li><li><span>3</span><p>Choose <strong>Add to Home Screen</strong>, then tap Add.</p></li>',
+      installOtherTitle: "Install City Bingo",
+      installOtherSteps: '<li><span>1</span><p>Open your browser\'s <strong>menu</strong>.</p></li><li><span>2</span><p>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</p></li><li><span>3</span><p>Confirm to play fullscreen and keep the game available offline.</p></li>'
+    },
+    ru: {
+      appTitle: "City Bingo — игра для исследования города",
+      metaDescription: "City Bingo превращает исследование города в увлекательную полевую игру.",
+      switchLanguage: "Переключить на английский",
+      goHome: "На главную",
+      fieldSite: "МЕСТО",
+      homeTitle: "Читайте город<br /><em>по одной клетке.</em>",
+      homeIntro: "Наблюдайте внимательнее, выбирайте необычные маршруты и собирайте истории, скрытые у всех на виду.",
+      openCard: "ОТКРЫТЬ КАРТОЧКУ",
+      currentLevel: "Прогресс текущего уровня",
+      fieldworkStats: "Статистика исследования",
+      squaresFound: "ЗАДАНИЙ<br />ВЫПОЛНЕНО",
+      researchPoints: "ОЧКОВ<br />ИССЛЕДОВАНИЯ",
+      kmWalked: "КМ<br />ПРОЙДЕНО",
+      activeSeries: "АКТИВНАЯ СЕРИЯ",
+      streetReader: "Читаем улицу",
+      viewCard: "К КАРТОЧКЕ",
+      foundationTasks: "ОСНОВЫ · 16 ЗАДАНИЙ",
+      seriesDescription: "Учитесь замечать,<br />что оживляет город.",
+      researchPrompt: "ВОПРОС ИССЛЕДОВАТЕЛЯ",
+      researchQuote: "«К чему приглашает эта улица — и кого она может исключать?»",
+      randomTask: "СЛУЧАЙНОЕ ЗАДАНИЕ",
+      seriesFoundations: "СЕРИЯ 01 · ОСНОВЫ",
+      bingoIntro: "Закройте строку, столбец или диагональ, чтобы собрать бинго. Каждая клетка — небольшой метод исследования города.",
+      currentBingoCount: "Количество собранных бинго",
+      bingos: "БИНГО",
+      taskCategoryLegend: "Категории заданий",
+      architecture: "Архитектура",
+      culture: "Культура",
+      ecology: "Экология",
+      movement: "Мобильность",
+      bingoBoard: "Карточка заданий City Bingo",
+      shareProgress: "Поделиться прогрессом",
+      fieldMap: "КАРТА ИССЛЕДОВАНИЯ РАЙОНА",
+      mapTitle: "Выберите нить<br />сквозь город.",
+      locate: "НАЙТИ МЕНЯ",
+      locating: "ИЩЕМ…",
+      located: "НАЙДЕНО",
+      mapSvgTitle: "Схематичная карта исследования района",
+      mapSvgDesc: "Игровая схема улиц, реки, парков и рекомендуемых исследовательских остановок.",
+      mapPark: "ОБЩИЙ ПАРК",
+      mapQuay: "ЮЖНАЯ НАБЕРЕЖНАЯ",
+      mapQuarter: "СТАРЫЙ КВАРТАЛ",
+      routeList: "Предлагаемые исследовательские маршруты",
+      routeMarketTitle: "Общественная улица",
+      routeMarketMeta: "1,2 км · Люди",
+      routeParkTitle: "Зелёные паузы",
+      routeParkMeta: "1,8 км · Экология",
+      routeBridgeTitle: "Границы и переходы",
+      routeBridgeMeta: "2,4 км · Мобильность",
+      routeMuseumTitle: "Прогулка памяти",
+      routeMuseumMeta: "2,0 км · Культура",
+      mapNote: "<strong>Полевая заметка:</strong> это карта-подсказка, а не пошаговый навигатор. Следите за движением, правилами доступа и обстановкой вокруг.",
+      urbanArchive: "ВАШ ГОРОДСКОЙ АРХИВ",
+      fieldPassport: "Полевой паспорт",
+      passportIntro: "Пополняемая коллекция замеченных мест, заданных вопросов и найденных закономерностей.",
+      urbanResearcher: "ИССЛЕДОВАТЕЛЬ ГОРОДА",
+      achievements: "ДОСТИЖЕНИЯ",
+      fieldBadges: "Полевые значки",
+      collection: "КОЛЛЕКЦИЯ",
+      researchNotes: "Заметки исследователя",
+      localOnly: "Ваши наблюдения хранятся на этом устройстве.",
+      backupHint: "Экспортируйте копию перед очисткой данных браузера или сменой телефона.",
+      export: "ЭКСПОРТ",
+      import: "ИМПОРТ",
+      navHome: "ГЛАВНАЯ",
+      navCard: "КАРТОЧКА",
+      navMap: "КАРТА",
+      navPassport: "ПАСПОРТ",
+      mainNavigation: "Основная навигация",
+      installBannerTitle: "Возьмите City Bingo с собой",
+      installBannerText: "Установите игру для полноэкранного режима и работы офлайн.",
+      install: "УСТАНОВИТЬ",
+      dismissInstall: "Закрыть предложение установки",
+      close: "ЗАКРЫТЬ",
+      closeTask: "Закрыть задание",
+      closeModal: "Закрыть",
+      whereExploring: "Где вы исследуете город?",
+      cityDialogText: "City Bingo работает в любом месте. Укажите город или район, чтобы персонализировать полевой паспорт.",
+      cityLabel: "ГОРОД ИЛИ РАЙОН",
+      cityPlaceholder: "например, Москва",
+      saveFieldSite: "СОХРАНИТЬ МЕСТО",
+      installCityBingo: "УСТАНОВИТЬ CITY BINGO",
+      addHomeScreen: "Добавить на экран «Домой»",
+      gotIt: "ПОНЯТНО",
+      todayFieldwork: "СЕГОДНЯШНЕЕ ИССЛЕДОВАНИЕ",
+      level: "УРОВЕНЬ",
+      observer: "НАБЛЮДАТЕЛЬ",
+      explorer: "ИССЛЕДОВАТЕЛЬ",
+      researcher: "УРБАНИСТ",
+      observationsLogged: (count, total) => `Записано наблюдений: ${count} из ${total}`,
+      cardExplored: (percent) => `Карточка исследована на ${percent}%`,
+      connectedSquares: "Закройте любые 4 связанные клетки",
+      completedLines: (count) => `Завершено линий: ${count}`,
+      completed: "Выполнено",
+      notCompleted: "Не выполнено",
+      unlocked: "ОТКРЫТО",
+      locked: "Закрыто",
+      archiveWaiting: "Ваш архив ждёт первой записи.",
+      archiveWaitingText: "Выполните задание, чтобы добавить первую полевую заметку.",
+      photoPrefix: "Фото",
+      locationLogged: "Наблюдение с геометкой",
+      logged: "ЗАПИСАНО",
+      taskDetails: "Описание задания",
+      time: "ВРЕМЯ",
+      difficulty: "СЛОЖНОСТЬ",
+      reward: "НАГРАДА",
+      pointsShort: "очк.",
+      difficultyEasy: "Легко",
+      difficultyMedium: "Средне",
+      difficultyHard: "Сложно",
+      editObservation: "Изменить наблюдение",
+      logObservation: "Записать наблюдение",
+      fieldNote: "ПОЛЕВАЯ ЗАМЕТКА",
+      notePlaceholder: "Что вы заметили? Какой вопрос возник?",
+      photoAttached: "ФОТО ПРИКРЕПЛЕНО",
+      addPhoto: "ДОБАВИТЬ ФОТО",
+      cameraLibrary: "Камера или медиатека",
+      checkedIn: "ГЕОМЕТКА ЕСТЬ",
+      checkIn: "ДОБАВИТЬ ГЕОМЕТКУ",
+      approximateSaved: "Приблизительное место сохранено",
+      optionalLocation: "Необязательная геометка",
+      updateObservation: "ОБНОВИТЬ НАБЛЮДЕНИЕ",
+      completeFor: (points) => `ВЫПОЛНИТЬ ЗА ${points} ОЧКОВ`,
+      removeCompleted: "УБРАТЬ ИЗ ВЫПОЛНЕННЫХ",
+      locationUnavailable: "Геолокация недоступна на этом устройстве.",
+      checkinReady: "Геометка готова к сохранению.",
+      permissionDenied: "Нет разрешения на доступ к геолокации.",
+      addEvidence: "Добавьте заметку, фото или геометку.",
+      squareComplete: (points) => `Клетка выполнена · +${points} очков`,
+      squareBingo: (count) => `Клетка выполнена · собрано бинго: ${count}!`,
+      observationUpdated: "Наблюдение обновлено.",
+      squareRemoved: "Клетка снова доступна в карточке.",
+      shareText: (count, total, city, bingos) => `Я исследовал(а) ${count} из ${total} клеток City Bingo в городе ${city} и собрал(а) бинго: ${bingos}.`,
+      shareTitle: "Моё городское исследование City Bingo",
+      progressCopied: "Результат скопирован.",
+      sharingUnavailable: "Сейчас поделиться результатом не получится.",
+      mapLocated: "Вы отмечены на полевой карте. Положение приблизительное.",
+      archiveExported: "Полевой архив экспортирован.",
+      archiveImported: "Полевой архив импортирован.",
+      invalidArchive: "Этот файл не является архивом City Bingo.",
+      citySet: (city) => `Место исследования: ${city}.`,
+      myCity: "МОЙ ГОРОД",
+      installIosSteps: '<li><span>1</span><p>Откройте эту страницу в <strong>Safari</strong>.</p></li><li><span>2</span><p>Нажмите кнопку <strong>«Поделиться»</strong> на панели инструментов.</p></li><li><span>3</span><p>Выберите <strong>«На экран Домой»</strong>, затем нажмите «Добавить».</p></li>',
+      installOtherTitle: "Установить City Bingo",
+      installOtherSteps: '<li><span>1</span><p>Откройте <strong>меню</strong> браузера.</p></li><li><span>2</span><p>Выберите <strong>«Установить приложение»</strong> или <strong>«Добавить на главный экран»</strong>.</p></li><li><span>3</span><p>Подтвердите установку, чтобы играть на весь экран и офлайн.</p></li>'
+    }
+  };
+
   const TASKS = [
     {
       id: "facade-detail",
@@ -16,6 +313,10 @@
       category: "architecture",
       icon: "building",
       prompt: "Find one building detail you would miss at walking speed. What does it reveal about craft, age, or status?",
+      ru: {
+        title: "Найдите сюрприз на фасаде",
+        prompt: "Найдите деталь здания, которую легко пропустить на ходу. Что она говорит о ремесле, возрасте или статусе места?"
+      },
       time: "15 min",
       difficulty: "Easy",
       points: 25,
@@ -27,6 +328,10 @@
       category: "culture",
       icon: "steam",
       prompt: "Let a smell guide you to a bakery, market, kitchen, garden, or workshop. Describe the memory it creates.",
+      ru: {
+        title: "Следуйте за местным ароматом",
+        prompt: "Пусть запах приведёт вас к пекарне, рынку, кухне, саду или мастерской. Опишите воспоминание, которое он вызывает."
+      },
       time: "20 min",
       difficulty: "Easy",
       points: 20,
@@ -38,6 +343,10 @@
       category: "ecology",
       icon: "leaf",
       prompt: "Compare a shaded and unshaded spot. Who uses each one, and how does shade change the life of the street?",
+      ru: {
+        title: "Составьте карту тени",
+        prompt: "Сравните место в тени и на солнце. Кто пользуется каждым из них и как тень меняет жизнь улицы?"
+      },
       time: "20 min",
       difficulty: "Easy",
       points: 25,
@@ -49,6 +358,10 @@
       category: "movement",
       icon: "walk",
       prompt: "Walk one kilometer without choosing the fastest route. Note three moments that made movement easier or harder.",
+      ru: {
+        title: "Пройдите любопытный километр",
+        prompt: "Пройдите километр, не выбирая самый быстрый путь. Отметьте три момента, которые упростили или затруднили движение."
+      },
       time: "25 min",
       difficulty: "Easy",
       points: 35,
@@ -60,6 +373,10 @@
       category: "movement",
       icon: "route",
       prompt: "Find a shortcut made by repeated use rather than formal planning. What does it say about the route people actually need?",
+      ru: {
+        title: "Найдите народную тропу",
+        prompt: "Найдите короткий путь, созданный людьми, а не планировщиками. Что он говорит о маршруте, который действительно нужен?"
+      },
       time: "15 min",
       difficulty: "Medium",
       points: 25,
@@ -71,6 +388,10 @@
       category: "culture",
       icon: "bowl",
       prompt: "Try a food or drink connected to this place. Ask where its ingredients, recipe, or name comes from.",
+      ru: {
+        title: "Попробуйте место на вкус",
+        prompt: "Попробуйте блюдо или напиток, связанный с этим местом. Узнайте, откуда появились его ингредиенты, рецепт или название."
+      },
       time: "30 min",
       difficulty: "Medium",
       points: 30,
@@ -82,6 +403,10 @@
       category: "culture",
       icon: "people",
       prompt: "Sit in one public place for ten minutes. Count what people do, not who they are. What behavior does the space support?",
+      ru: {
+        title: "Понаблюдайте за городской жизнью",
+        prompt: "Проведите десять минут в общественном месте. Считайте действия людей, а не самих людей. Какое поведение поддерживает это пространство?"
+      },
       time: "15 min",
       difficulty: "Easy",
       points: 25,
@@ -93,6 +418,10 @@
       category: "architecture",
       icon: "eye",
       prompt: "Find a legal, publicly accessible elevated view. Identify one pattern that is invisible from street level.",
+      ru: {
+        title: "Найдите вид сверху",
+        prompt: "Найдите легальную и общедоступную точку обзора сверху. Определите закономерность, которую не видно с уровня улицы."
+      },
       time: "35 min",
       difficulty: "Medium",
       points: 35,
@@ -104,6 +433,10 @@
       category: "architecture",
       icon: "history",
       prompt: "Find a building used for something different from its original purpose. Which traces of the earlier life remain?",
+      ru: {
+        title: "Найдите вторую жизнь здания",
+        prompt: "Найдите здание, которое теперь используется не по первоначальному назначению. Какие следы его прошлой жизни сохранились?"
+      },
       time: "25 min",
       difficulty: "Medium",
       points: 30,
@@ -115,6 +448,10 @@
       category: "ecology",
       icon: "flower",
       prompt: "Locate a tiny habitat: a verge, wall crack, rain garden, or untended corner. List the living things sharing it.",
+      ru: {
+        title: "Найдите уголок дикой природы",
+        prompt: "Найдите крошечную среду обитания: обочину, трещину в стене, дождевой сад или заброшенный уголок. Перечислите его обитателей."
+      },
       time: "20 min",
       difficulty: "Easy",
       points: 25,
@@ -126,6 +463,10 @@
       category: "culture",
       icon: "museum",
       prompt: "Visit a museum, library, gallery, archive, or community space. Find one object or story that changes how you read the area.",
+      ru: {
+        title: "Откройте дверь в культуру",
+        prompt: "Посетите музей, библиотеку, галерею, архив или общественный центр. Найдите предмет или историю, которые изменят ваше восприятие района."
+      },
       time: "45 min",
       difficulty: "Medium",
       points: 40,
@@ -137,6 +478,10 @@
       category: "movement",
       icon: "access",
       prompt: "Follow one block while imagining wheels, a cane, low vision, or limited stamina. Record one support and one barrier.",
+      ru: {
+        title: "Проверьте доступный маршрут",
+        prompt: "Пройдите квартал, представляя коляску, трость, слабое зрение или ограниченную выносливость. Запишите одно удобство и один барьер."
+      },
       time: "25 min",
       difficulty: "Medium",
       points: 35,
@@ -148,6 +493,10 @@
       category: "architecture",
       icon: "type",
       prompt: "Photograph or sketch three letterforms from signs, plaques, or shopfronts. What era or identity do they communicate?",
+      ru: {
+        title: "Соберите уличную типографику",
+        prompt: "Сфотографируйте или зарисуйте три шрифта с вывесок, табличек или витрин. Какую эпоху или идентичность они передают?"
+      },
       time: "20 min",
       difficulty: "Easy",
       points: 25,
@@ -159,6 +508,10 @@
       category: "ecology",
       icon: "sound",
       prompt: "Stand still for two minutes and map sounds by direction and distance. Which are biological, mechanical, and human?",
+      ru: {
+        title: "Нарисуйте карту звуков",
+        prompt: "Постойте неподвижно две минуты и нанесите звуки на карту по направлению и расстоянию. Какие из них природные, механические и человеческие?"
+      },
       time: "15 min",
       difficulty: "Easy",
       points: 25,
@@ -170,6 +523,10 @@
       category: "ecology",
       icon: "water",
       prompt: "Follow where rainwater would travel from roof to drain, soil, or river. Where is water absorbed, delayed, or wasted?",
+      ru: {
+        title: "Проследите путь дождя",
+        prompt: "Проследите путь дождевой воды от крыши к водостоку, почве или реке. Где вода впитывается, задерживается или теряется?"
+      },
       time: "25 min",
       difficulty: "Medium",
       points: 30,
@@ -181,6 +538,10 @@
       category: "movement",
       icon: "transit",
       prompt: "Travel from a transit stop to a useful destination. Time the walk and note crossings, shelter, seating, and wayfinding.",
+      ru: {
+        title: "Проверьте последний километр",
+        prompt: "Пройдите от остановки транспорта до полезной точки. Засеките время и оцените переходы, укрытия, места для отдыха и навигацию."
+      },
       time: "35 min",
       difficulty: "Hard",
       points: 40,
@@ -198,37 +559,54 @@
     market: {
       number: "01",
       meta: "THE SOCIAL STREET · 25 MIN",
-      detail: "Follow the busiest path. Notice where people choose to stop."
+      detail: "Follow the busiest path. Notice where people choose to stop.",
+      ru: {
+        meta: "ОБЩЕСТВЕННАЯ УЛИЦА · 25 МИН",
+        detail: "Следуйте по самому оживлённому пути. Замечайте, где люди решают остановиться."
+      }
     },
     park: {
       number: "02",
       meta: "GREEN INTERRUPTIONS · 35 MIN",
-      detail: "Link three planted spaces and compare their shade, sound, and biodiversity."
+      detail: "Link three planted spaces and compare their shade, sound, and biodiversity.",
+      ru: {
+        meta: "ЗЕЛЁНЫЕ ПАУЗЫ · 35 МИН",
+        detail: "Соедините три озеленённых места и сравните их тень, звуки и биоразнообразие."
+      }
     },
     bridge: {
       number: "03",
       meta: "EDGES & CROSSINGS · 45 MIN",
-      detail: "Cross a physical boundary and watch how access, pace, and character change."
+      detail: "Cross a physical boundary and watch how access, pace, and character change.",
+      ru: {
+        meta: "ГРАНИЦЫ И ПЕРЕХОДЫ · 45 МИН",
+        detail: "Пересеките физическую границу и проследите, как меняются доступность, темп и характер места."
+      }
     },
     museum: {
       number: "04",
       meta: "MEMORY WALK · 40 MIN",
-      detail: "Connect a cultural institution to traces of memory found in the surrounding streets."
+      detail: "Connect a cultural institution to traces of memory found in the surrounding streets.",
+      ru: {
+        meta: "ПРОГУЛКА ПАМЯТИ · 40 МИН",
+        detail: "Свяжите культурное учреждение со следами памяти на окружающих улицах."
+      }
     }
   };
 
   const ACHIEVEMENTS = [
-    { id: "first", title: "First Look", detail: "Log 1 task", icon: "eye", color: "#f2b632", test: (s) => completedIds(s).length >= 1 },
-    { id: "four-ways", title: "Four Ways", detail: "Try every category", icon: "compass", color: "#4f7f8f", test: (s) => new Set(completedIds(s).map((id) => taskById(id).category)).size === 4 },
-    { id: "bingo", title: "Line Reader", detail: "Make 1 bingo", icon: "grid", color: "#e66f4d", test: (s) => getBingoLines(s).length >= 1 },
-    { id: "witness", title: "Street Witness", detail: "Attach 3 photos", icon: "camera", color: "#7e6f8f", test: (s) => completedEntries(s).filter((entry) => entry.photo).length >= 3 },
-    { id: "grounded", title: "Ground Truth", detail: "Use a check-in", icon: "pin", color: "#6b8761", test: (s) => completedEntries(s).some((entry) => entry.location) },
-    { id: "full-card", title: "City Reader", detail: "Complete the card", icon: "star", color: "#f2b632", test: (s) => completedIds(s).length === TASKS.length }
+    { id: "first", title: "First Look", detail: "Log 1 task", ru: { title: "Первый взгляд", detail: "Запишите 1 задание" }, icon: "eye", color: "#f2b632", test: (s) => completedIds(s).length >= 1 },
+    { id: "four-ways", title: "Four Ways", detail: "Try every category", ru: { title: "Четыре пути", detail: "Попробуйте все категории" }, icon: "compass", color: "#4f7f8f", test: (s) => new Set(completedIds(s).map((id) => taskById(id).category)).size === 4 },
+    { id: "bingo", title: "Line Reader", detail: "Make 1 bingo", ru: { title: "Читатель линий", detail: "Соберите 1 бинго" }, icon: "grid", color: "#e66f4d", test: (s) => getBingoLines(s).length >= 1 },
+    { id: "witness", title: "Street Witness", detail: "Attach 3 photos", ru: { title: "Свидетель улицы", detail: "Добавьте 3 фото" }, icon: "camera", color: "#7e6f8f", test: (s) => completedEntries(s).filter((entry) => entry.photo).length >= 3 },
+    { id: "grounded", title: "Ground Truth", detail: "Use a check-in", ru: { title: "Проверка на месте", detail: "Добавьте геометку" }, icon: "pin", color: "#6b8761", test: (s) => completedEntries(s).some((entry) => entry.location) },
+    { id: "full-card", title: "City Reader", detail: "Complete the card", ru: { title: "Читатель города", detail: "Заполните карточку" }, icon: "star", color: "#f2b632", test: (s) => completedIds(s).length === TASKS.length }
   ];
 
   const defaultState = {
     version: 1,
     city: "My City",
+    lang: navigator.language?.toLowerCase().startsWith("ru") ? "ru" : "en",
     completed: {},
     lastScreen: "home",
     dismissedInstall: false
@@ -258,7 +636,9 @@
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (!saved || saved.version !== 1 || typeof saved.completed !== "object") return { ...defaultState };
-      return { ...defaultState, ...saved };
+      const merged = { ...defaultState, ...saved };
+      if (!["en", "ru"].includes(merged.lang)) merged.lang = defaultState.lang;
+      return merged;
     } catch (error) {
       return { ...defaultState };
     }
@@ -266,6 +646,24 @@
 
   function saveState() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function t(key, ...args) {
+    const value = TRANSLATIONS[state.lang]?.[key] ?? TRANSLATIONS.en[key] ?? key;
+    return typeof value === "function" ? value(...args) : value;
+  }
+
+  function localized(item, field) {
+    return state.lang === "ru" && item.ru?.[field] ? item.ru[field] : item[field];
+  }
+
+  function localizedTaskTime(task) {
+    return state.lang === "ru" ? task.time.replace(" min", " мин") : task.time;
+  }
+
+  function localizedDifficulty(task) {
+    const keys = { Easy: "difficultyEasy", Medium: "difficultyMedium", Hard: "difficultyHard" };
+    return t(keys[task.difficulty] || "difficultyMedium");
   }
 
   function completedIds(targetState = state) {
@@ -290,9 +688,9 @@
 
   function getLevel(targetState = state) {
     const count = completedIds(targetState).length;
-    if (count >= 12) return { number: 3, name: "RESEARCHER", floor: 12, ceiling: 16 };
-    if (count >= 5) return { number: 2, name: "EXPLORER", floor: 5, ceiling: 12 };
-    return { number: 1, name: "OBSERVER", floor: 0, ceiling: 5 };
+    if (count >= 12) return { number: 3, name: t("researcher"), floor: 12, ceiling: 16 };
+    if (count >= 5) return { number: 2, name: t("explorer"), floor: 5, ceiling: 12 };
+    return { number: 1, name: t("observer"), floor: 0, ceiling: 5 };
   }
 
   function getBingoLines(targetState = state) {
@@ -339,10 +737,58 @@
     return `<svg class="${className}" viewBox="0 0 24 24" aria-hidden="true">${path}</svg>`;
   }
 
+  function applyStaticTranslations() {
+    document.documentElement.lang = state.lang;
+    document.title = t("appTitle");
+    document.querySelector('meta[name="description"]').content = t("metaDescription");
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      element.textContent = t(element.dataset.i18n);
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+      element.innerHTML = t(element.dataset.i18nHtml);
+    });
+
+    const languageToggle = document.getElementById("languageToggle");
+    languageToggle.textContent = state.lang === "ru" ? "EN" : "RU";
+    languageToggle.setAttribute("aria-label", t("switchLanguage"));
+    document.querySelector(".brand").setAttribute("aria-label", t("goHome"));
+    document.querySelector(".hero-orbit").setAttribute("aria-label", t("currentLevel"));
+    document.querySelector(".stats-strip").setAttribute("aria-label", t("fieldworkStats"));
+    document.querySelector(".card-stamp").setAttribute("aria-label", t("currentBingoCount"));
+    document.querySelector(".category-legend").setAttribute("aria-label", t("taskCategoryLegend"));
+    els.board.setAttribute("aria-label", t("bingoBoard"));
+    document.getElementById("shareCardButton").setAttribute("aria-label", t("shareProgress"));
+    document.querySelector(".route-list").setAttribute("aria-label", t("routeList"));
+    document.querySelector(".bottom-nav").setAttribute("aria-label", t("mainNavigation"));
+    document.getElementById("dismissInstall").setAttribute("aria-label", t("dismissInstall"));
+    document.querySelector(".sheet-handle-row button").setAttribute("aria-label", t("closeTask"));
+    document.querySelectorAll(".modal-close").forEach((button) => button.setAttribute("aria-label", t("closeModal")));
+
+    document.getElementById("mapSvgTitle").textContent = t("mapSvgTitle");
+    document.getElementById("mapSvgDesc").textContent = t("mapSvgDesc");
+    document.getElementById("mapLabelPark").textContent = t("mapPark");
+    document.getElementById("mapLabelQuay").textContent = t("mapQuay");
+    document.getElementById("mapLabelQuarter").textContent = t("mapQuarter");
+    document.querySelector(".passport-monogram").textContent = state.lang === "ru" ? "ИГ" : "UR";
+    els.cityInput.placeholder = t("cityPlaceholder");
+
+    const locale = state.lang === "ru" ? "ru-RU" : "en-US";
+    const dateLabel = new Intl.DateTimeFormat(locale, { weekday: "long", month: "short", day: "numeric" }).format(new Date());
+    document.getElementById("todayLabel").textContent = `${dateLabel} · ${t("todayFieldwork")}`;
+
+    const mapLocated = !document.getElementById("mapYou").hasAttribute("hidden");
+    document.getElementById("locateButtonLabel").textContent = mapLocated ? t("located") : t("locate");
+    const activeRoute = document.querySelector(".route-item.is-active")?.dataset.route || "market";
+    selectRoute(activeRoute);
+    renderInstallInstructions();
+  }
+
   function renderBoard() {
     const winningIndexes = new Set(getBingoLines().flat());
     els.board.innerHTML = TASKS.map((task, index) => {
       const complete = Boolean(state.completed[task.id]);
+      const title = localized(task, "title");
       return `
         <button
           class="bingo-cell${complete ? " is-complete" : ""}${winningIndexes.has(index) ? " is-bingo" : ""}"
@@ -350,13 +796,13 @@
           role="gridcell"
           data-task-id="${task.id}"
           style="--cell-color:${CATEGORY_COLORS[task.category]}"
-          aria-label="${escapeHtml(task.title)}. ${complete ? "Completed" : "Not completed"}."
+          aria-label="${escapeHtml(title)}. ${complete ? t("completed") : t("notCompleted")}."
         >
           <span class="cell-top">
             ${iconSvg(task.icon, "cell-icon")}
             <span class="cell-index">${String(index + 1).padStart(2, "0")}</span>
           </span>
-          <span class="cell-title">${escapeHtml(task.title)}</span>
+          <span class="cell-title">${escapeHtml(title)}</span>
           <span class="cell-category" aria-hidden="true"></span>
           <span class="completion-check" aria-hidden="true">${iconSvg("check")}</span>
         </button>
@@ -370,11 +816,13 @@
     document.getElementById("achievementCount").textContent = `${unlocked.length} / ${ACHIEVEMENTS.length}`;
     grid.innerHTML = ACHIEVEMENTS.map((achievement) => {
       const isUnlocked = achievement.test(state);
+      const title = localized(achievement, "title");
+      const detail = localized(achievement, "detail");
       return `
-        <article class="achievement${isUnlocked ? "" : " is-locked"}" aria-label="${escapeHtml(achievement.title)}. ${isUnlocked ? "Unlocked" : "Locked"}.">
+        <article class="achievement${isUnlocked ? "" : " is-locked"}" aria-label="${escapeHtml(title)}. ${isUnlocked ? t("unlocked") : t("locked")}.">
           <span class="badge-art" style="--badge-color:${achievement.color}">${iconSvg(achievement.icon)}</span>
-          <strong>${escapeHtml(achievement.title)}</strong>
-          <small>${isUnlocked ? "UNLOCKED" : escapeHtml(achievement.detail).toUpperCase()}</small>
+          <strong>${escapeHtml(title)}</strong>
+          <small>${isUnlocked ? t("unlocked") : escapeHtml(detail).toUpperCase()}</small>
         </article>
       `;
     }).join("");
@@ -387,7 +835,7 @@
       .sort((a, b) => new Date(b.entry.date) - new Date(a.entry.date));
 
     if (!items.length) {
-      list.innerHTML = '<div class="empty-notes"><strong>Your archive is waiting.</strong><p>Complete a bingo square to add the first field note.</p></div>';
+      list.innerHTML = `<div class="empty-notes"><strong>${t("archiveWaiting")}</strong><p>${t("archiveWaitingText")}</p></div>`;
       return;
     }
 
@@ -395,8 +843,8 @@
       <article class="note-item">
         <span class="note-symbol">${iconSvg(task.icon)}</span>
         <div>
-          <strong>${escapeHtml(task.title)}</strong>
-          <p>${escapeHtml(entry.note || (entry.photo ? `Photo: ${entry.photo}` : "Location observation logged"))}</p>
+          <strong>${escapeHtml(localized(task, "title"))}</strong>
+          <p>${escapeHtml(entry.note || (entry.photo ? `${t("photoPrefix")}: ${entry.photo}` : t("locationLogged")))}</p>
         </div>
         <time datetime="${escapeHtml(entry.date)}">${formatShortDate(entry.date)}</time>
       </article>
@@ -405,9 +853,10 @@
 
   function formatShortDate(dateString) {
     try {
-      return new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric" }).format(new Date(dateString)).toUpperCase();
+      const locale = state.lang === "ru" ? "ru-RU" : "en-US";
+      return new Intl.DateTimeFormat(locale, { month: "short", day: "numeric" }).format(new Date(dateString)).toUpperCase();
     } catch (error) {
-      return "LOGGED";
+      return t("logged");
     }
   }
 
@@ -427,22 +876,24 @@
     document.getElementById("levelName").textContent = level.name;
     document.getElementById("levelProgressRing").style.strokeDashoffset = String(408.4 * (1 - levelFraction));
     document.getElementById("miniProgress").style.width = `${cardFraction * 100}%`;
-    document.getElementById("seriesProgressLabel").textContent = `${count} of ${TASKS.length} observations logged`;
+    document.getElementById("seriesProgressLabel").textContent = t("observationsLogged", count, TASKS.length);
     document.getElementById("bingoCount").textContent = bingos;
-    document.getElementById("boardProgressLabel").textContent = `${Math.round(cardFraction * 100)}% of card explored`;
-    document.getElementById("nextBingoLabel").textContent = bingos ? `${bingos} fieldwork ${bingos === 1 ? "line" : "lines"} completed` : "Complete any 4 connected squares";
-    document.getElementById("passportRank").textContent = `${level.name} · LEVEL ${String(level.number).padStart(2, "0")}`;
+    document.getElementById("boardProgressLabel").textContent = t("cardExplored", Math.round(cardFraction * 100));
+    document.getElementById("nextBingoLabel").textContent = bingos ? t("completedLines", bingos) : t("connectedSquares");
+    document.getElementById("passportRank").textContent = `${level.name} · ${t("level")} ${String(level.number).padStart(2, "0")}`;
     document.getElementById("passportPoints").textContent = String(points).padStart(4, "0");
   }
 
   function renderCity() {
     const city = state.city || "My City";
-    document.getElementById("currentCityLabel").textContent = city.toUpperCase();
-    document.getElementById("passportCity").textContent = city.toUpperCase();
+    const displayCity = city === "My City" ? t("myCity") : city.toUpperCase();
+    document.getElementById("currentCityLabel").textContent = displayCity;
+    document.getElementById("passportCity").textContent = displayCity;
     els.cityInput.value = city === "My City" ? "" : city;
   }
 
   function renderAll() {
+    applyStaticTranslations();
     renderBoard();
     renderSummary();
     renderCity();
@@ -480,41 +931,43 @@
     const entry = state.completed[taskId] || {};
     activeDraft = { photo: entry.photo || "", location: entry.location || null };
     const isComplete = Boolean(state.completed[taskId]);
+    const title = localized(task, "title");
+    const prompt = localized(task, "prompt");
 
     els.taskSheet.style.setProperty("--task-color", CATEGORY_COLORS[task.category]);
     els.taskSheet.innerHTML = `
       <div class="task-sheet-heading">
         <span class="task-number">${String(TASKS.indexOf(task) + 1).padStart(2, "0")}</span>
         <div>
-          <span class="task-category-label"><i></i>${task.category}</span>
-          <h2>${escapeHtml(task.title)}</h2>
+          <span class="task-category-label"><i></i>${t(task.category)}</span>
+          <h2>${escapeHtml(title)}</h2>
         </div>
       </div>
-      <p class="task-prompt">${escapeHtml(task.prompt)}</p>
-      <div class="task-meta" aria-label="Task details">
-        <div><small>TIME</small><strong>${task.time}</strong></div>
-        <div><small>DIFFICULTY</small><strong>${task.difficulty}</strong></div>
-        <div><small>REWARD</small><strong>${task.points} pts</strong></div>
+      <p class="task-prompt">${escapeHtml(prompt)}</p>
+      <div class="task-meta" aria-label="${t("taskDetails")}">
+        <div><small>${t("time")}</small><strong>${localizedTaskTime(task)}</strong></div>
+        <div><small>${t("difficulty")}</small><strong>${localizedDifficulty(task)}</strong></div>
+        <div><small>${t("reward")}</small><strong>${task.points} ${t("pointsShort")}</strong></div>
       </div>
       <div class="task-log">
-        <h3>${isComplete ? "Edit your observation" : "Log your observation"}</h3>
-        <label for="taskNote">FIELD NOTE</label>
-        <textarea id="taskNote" maxlength="500" placeholder="What did you notice? What question did it raise?">${escapeHtml(entry.note || "")}</textarea>
+        <h3>${isComplete ? t("editObservation") : t("logObservation")}</h3>
+        <label for="taskNote">${t("fieldNote")}</label>
+        <textarea id="taskNote" maxlength="500" placeholder="${t("notePlaceholder")}">${escapeHtml(entry.note || "")}</textarea>
         <div class="evidence-row">
           <label class="photo-upload${activeDraft.photo ? " has-photo" : ""}" for="taskPhoto" id="photoUploadLabel">
             ${iconSvg("camera")}
-            <span><strong>${activeDraft.photo ? "PHOTO ATTACHED" : "ADD A PHOTO"}</strong><small id="photoFileName">${escapeHtml(activeDraft.photo || "Camera or library")}</small></span>
+            <span><strong>${activeDraft.photo ? t("photoAttached") : t("addPhoto")}</strong><small id="photoFileName">${escapeHtml(activeDraft.photo || t("cameraLibrary"))}</small></span>
           </label>
           <input id="taskPhoto" type="file" accept="image/*" capture="environment" hidden />
           <button class="checkin-button${activeDraft.location ? " has-location" : ""}" id="taskCheckin" type="button">
             ${iconSvg("pin")}
-            <span><strong>${activeDraft.location ? "CHECKED IN" : "CHECK IN"}</strong><small>${activeDraft.location ? "Approximate location saved" : "Optional location evidence"}</small></span>
+            <span><strong>${activeDraft.location ? t("checkedIn") : t("checkIn")}</strong><small>${activeDraft.location ? t("approximateSaved") : t("optionalLocation")}</small></span>
           </button>
         </div>
         <button class="primary-button task-complete-button${isComplete ? " is-complete" : ""}" id="completeTaskButton" type="button">
-          ${isComplete ? `${iconSvg("check")} UPDATE OBSERVATION` : `COMPLETE FOR ${task.points} POINTS`}
+          ${isComplete ? `${iconSvg("check")} ${t("updateObservation")}` : t("completeFor", task.points)}
         </button>
-        ${isComplete ? '<button class="remove-completion" id="removeCompletionButton" type="button">REMOVE FROM COMPLETED</button>' : ""}
+        ${isComplete ? `<button class="remove-completion" id="removeCompletionButton" type="button">${t("removeCompleted")}</button>` : ""}
       </div>
     `;
 
@@ -531,18 +984,18 @@
     activeDraft.photo = file.name.slice(0, 80);
     const label = document.getElementById("photoUploadLabel");
     label.classList.add("has-photo");
-    label.querySelector("strong").textContent = "PHOTO ATTACHED";
+    label.querySelector("strong").textContent = t("photoAttached");
     document.getElementById("photoFileName").textContent = activeDraft.photo;
   }
 
   function handleTaskCheckin() {
     const button = document.getElementById("taskCheckin");
     if (!navigator.geolocation) {
-      showToast("Location is not available on this device.");
+      showToast(t("locationUnavailable"));
       return;
     }
     button.classList.add("is-locating");
-    button.querySelector("strong").textContent = "LOCATING…";
+    button.querySelector("strong").textContent = t("locating");
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -552,14 +1005,14 @@
         };
         button.classList.remove("is-locating");
         button.classList.add("has-location");
-        button.querySelector("strong").textContent = "CHECKED IN";
-        button.querySelector("small").textContent = "Approximate location saved";
-        showToast("Check-in ready to save.");
+        button.querySelector("strong").textContent = t("checkedIn");
+        button.querySelector("small").textContent = t("approximateSaved");
+        showToast(t("checkinReady"));
       },
       () => {
         button.classList.remove("is-locating");
-        button.querySelector("strong").textContent = "CHECK IN";
-        showToast("Location permission was not granted.");
+        button.querySelector("strong").textContent = t("checkIn");
+        showToast(t("permissionDenied"));
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
@@ -571,7 +1024,7 @@
     const noteInput = document.getElementById("taskNote");
     const note = noteInput.value.trim();
     if (!note && !activeDraft.photo && !activeDraft.location) {
-      showToast("Add a field note, photo, or check-in first.");
+      showToast(t("addEvidence"));
       noteInput.focus();
       return;
     }
@@ -589,10 +1042,10 @@
 
     if (!wasComplete) {
       const bingos = getBingoLines().length;
-      showToast(bingos ? `Square complete · ${bingos} ${bingos === 1 ? "bingo" : "bingos"}!` : `Square complete · +${task.points} points`);
+      showToast(bingos ? t("squareBingo", bingos) : t("squareComplete", task.points));
       if (navigator.vibrate) navigator.vibrate([35, 40, 55]);
     } else {
-      showToast("Observation updated.");
+      showToast(t("observationUpdated"));
     }
   }
 
@@ -602,7 +1055,7 @@
     saveState();
     renderAll();
     els.taskDialog.close();
-    showToast("Square returned to the card.");
+    showToast(t("squareRemoved"));
   }
 
   function showToast(message) {
@@ -621,53 +1074,56 @@
   async function shareProgress() {
     const count = completedIds().length;
     const bingos = getBingoLines().length;
-    const text = `I explored ${count}/${TASKS.length} City Bingo squares in ${state.city} and made ${bingos} ${bingos === 1 ? "bingo" : "bingos"}.`;
-    const shareData = { title: "My City Bingo fieldwork", text, url: window.location.href };
+    const city = state.city === "My City" ? t("myCity").toLocaleLowerCase(state.lang === "ru" ? "ru-RU" : "en-US") : state.city;
+    const text = t("shareText", count, TASKS.length, city, bingos);
+    const shareData = { title: t("shareTitle"), text, url: window.location.href };
 
     try {
       if (navigator.share) {
         await navigator.share(shareData);
       } else if (navigator.clipboard) {
         await navigator.clipboard.writeText(`${text} ${window.location.href}`);
-        showToast("Progress copied to the clipboard.");
+        showToast(t("progressCopied"));
       } else {
         showToast(text);
       }
     } catch (error) {
-      if (error.name !== "AbortError") showToast("Sharing is not available right now.");
+      if (error.name !== "AbortError") showToast(t("sharingUnavailable"));
     }
   }
 
   function selectRoute(routeId) {
     const route = ROUTES[routeId];
     if (!route) return;
+    const copy = state.lang === "ru" ? route.ru : route;
     document.querySelectorAll(".route-item").forEach((item) => item.classList.toggle("is-active", item.dataset.route === routeId));
     document.querySelectorAll(".map-stop").forEach((item) => item.classList.toggle("is-active", item.dataset.mapStop === routeId));
     document.getElementById("mapDetail").innerHTML = `
       <span class="map-detail-number">${route.number}</span>
-      <div><small>${route.meta}</small><strong>${route.detail}</strong></div>
+      <div><small>${escapeHtml(copy.meta)}</small><strong>${escapeHtml(copy.detail)}</strong></div>
     `;
   }
 
   function locateOnMap() {
     const button = document.getElementById("locateButton");
+    const label = document.getElementById("locateButtonLabel");
     if (!navigator.geolocation) {
-      showToast("Location is not available on this device.");
+      showToast(t("locationUnavailable"));
       return;
     }
     button.classList.add("is-locating");
-    button.lastChild.textContent = " LOCATING";
+    label.textContent = t("locating");
     navigator.geolocation.getCurrentPosition(
       () => {
         button.classList.remove("is-locating");
-        button.lastChild.textContent = " LOCATED";
-        document.getElementById("mapYou").hidden = false;
-        showToast("You are on the field map. Position is approximate.");
+        label.textContent = t("located");
+        document.getElementById("mapYou").removeAttribute("hidden");
+        showToast(t("mapLocated"));
       },
       () => {
         button.classList.remove("is-locating");
-        button.lastChild.textContent = " LOCATE";
-        showToast("Location permission was not granted.");
+        label.textContent = t("locate");
+        showToast(t("permissionDenied"));
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
@@ -683,12 +1139,13 @@
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `city-bingo-${state.city.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "fieldwork"}.json`;
+    const citySlug = state.city.toLocaleLowerCase(state.lang === "ru" ? "ru-RU" : "en-US").replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+    anchor.download = `city-bingo-${citySlug || "fieldwork"}.json`;
     document.body.appendChild(anchor);
     anchor.click();
     anchor.remove();
     URL.revokeObjectURL(url);
-    showToast("Field archive exported.");
+    showToast(t("archiveExported"));
   }
 
   async function importData(event) {
@@ -699,11 +1156,12 @@
       const imported = payload?.data || payload;
       if (imported?.version !== 1 || typeof imported.completed !== "object" || typeof imported.city !== "string") throw new Error("Invalid archive");
       state = { ...defaultState, ...imported };
+      if (!["en", "ru"].includes(state.lang)) state.lang = defaultState.lang;
       saveState();
       renderAll();
-      showToast("Field archive imported.");
+      showToast(t("archiveImported"));
     } catch (error) {
-      showToast("That file is not a City Bingo archive.");
+      showToast(t("invalidArchive"));
     } finally {
       event.target.value = "";
     }
@@ -717,6 +1175,11 @@
     return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   }
 
+  function renderInstallInstructions() {
+    els.installDialogTitle.textContent = isIos() ? t("addHomeScreen") : t("installOtherTitle");
+    els.installSteps.innerHTML = isIos() ? t("installIosSteps") : t("installOtherSteps");
+  }
+
   function showInstallInstructions() {
     if (deferredInstallPrompt) {
       deferredInstallPrompt.prompt();
@@ -727,14 +1190,7 @@
       return;
     }
 
-    if (!isIos()) {
-      els.installDialogTitle.textContent = "Install City Bingo";
-      els.installSteps.innerHTML = `
-        <li><span>1</span><p>Open your browser's <strong>menu</strong>.</p></li>
-        <li><span>2</span><p>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</p></li>
-        <li><span>3</span><p>Confirm to play fullscreen and keep the game available offline.</p></li>
-      `;
-    }
+    renderInstallInstructions();
     els.installDialog.showModal();
   }
 
@@ -770,6 +1226,11 @@
 
   document.querySelectorAll(".route-item").forEach((button) => button.addEventListener("click", () => selectRoute(button.dataset.route)));
   document.querySelectorAll(".map-stop").forEach((stop) => stop.addEventListener("click", () => selectRoute(stop.dataset.mapStop)));
+  document.getElementById("languageToggle").addEventListener("click", () => {
+    state.lang = state.lang === "ru" ? "en" : "ru";
+    saveState();
+    renderAll();
+  });
   document.getElementById("citySwitcher").addEventListener("click", () => els.cityDialog.showModal());
   document.getElementById("resumeGame").addEventListener("click", () => navigate("bingo"));
   document.getElementById("randomTaskButton").addEventListener("click", showRandomTask);
@@ -792,7 +1253,7 @@
     saveState();
     renderCity();
     els.cityDialog.close();
-    showToast(`Field site set to ${city}.`);
+    showToast(t("citySet", city));
   });
 
   els.taskDialog.addEventListener("click", (event) => {
@@ -804,9 +1265,6 @@
   els.installDialog.addEventListener("click", (event) => {
     if (event.target === els.installDialog) els.installDialog.close();
   });
-
-  const dateLabel = new Intl.DateTimeFormat(undefined, { weekday: "long", month: "short", day: "numeric" }).format(new Date());
-  document.getElementById("todayLabel").textContent = `${dateLabel} · TODAY'S FIELDWORK`;
 
   const requestedScreen = new URLSearchParams(window.location.search).get("screen");
   const initialScreen = ["home", "bingo", "map", "passport"].includes(requestedScreen)

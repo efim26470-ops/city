@@ -2,7 +2,17 @@
 
 City Bingo is a mobile-first progressive web app for playful urban research. It is intentionally built with plain HTML, CSS, and JavaScript so it can be hosted on GitHub Pages without a build step or backend.
 
+The interface is available in English and Russian. Russian is selected automatically on Russian-language devices, and the RU/EN button in the header remembers the player's choice.
 
+## Publish on GitHub Pages
+
+1. Create a new empty GitHub repository.
+2. Unzip this package and upload **the contents of the `city-bingo` folder** to the repository root. `index.html` must be at the root, not inside another folder.
+3. Commit the files to the `main` branch.
+4. In the repository, open **Settings → Pages**.
+5. Under **Build and deployment**, choose **Deploy from a branch**.
+6. Select `main`, choose `/ (root)`, and press **Save**.
+7. GitHub will show the public URL after deployment finishes.
 
 The app uses only relative paths, so it works both at `username.github.io` and at a project URL such as `username.github.io/city-bingo/`.
 
@@ -17,6 +27,7 @@ The installed app opens fullscreen. After the first online visit, its game shell
 ## Included features
 
 - 4 × 4 urban-research bingo card with 16 field tasks
+- Complete English and Russian localization with a persistent RU/EN switch
 - Architecture, culture, ecology, and movement series
 - Levels, points, bingo detection, achievements, and a field passport
 - Field notes, optional camera evidence, and approximate check-ins
